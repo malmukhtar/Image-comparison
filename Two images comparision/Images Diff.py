@@ -1,9 +1,14 @@
 import numpy as np
 import cv2
 
+# printing a brief of the function of the script
+print("\n \n \n \n This app compares two images and returns an integer value that extends from 0 to infinity, where 0 means a perfect match and as the number grows the difference increase.\n \n \n \n")
+
+# request the images path
 Image1_path = input("Enter the Image 1 path: ")
 Image2_path = input("Enter the Image 2 path: ") 
 
+# upload images
 Image1 = cv2.imread(Image1_path)
 Image2 = cv2.imread(Image2_path)
 
@@ -40,4 +45,5 @@ def comparsion(Image1,Image2):
 
     return (cv2.matchShapes(RContours[0],SContours[0],cv2.CONTOURS_MATCH_I1, 0.0))
 
-print(comparsion(Image1,Image2))
+# returing results
+print('The value is: ' + comparsion(Image1,Image2))
